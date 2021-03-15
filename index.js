@@ -11,7 +11,7 @@ let mongoDB = process.env.MONGODB_URI || url;
 mongoose.connect(mongoDB,{ useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.Promise = global.Promise;
 let db = mongoose.connection;
-db.on('error', console.error.bind(console, 'Erro na Ligação ao MongoDB'));
+db.on('error', console.error.bind(console, 'Erro na Ligacao ao MongoDB'));
 
 //Body Parser
 app.use(bodyParser.json());
@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/users', users);
 
 //Servidor
-let porto = 8000;
-app.listen(porto, () => {
- console.log('Servidor em execução no porto: ' + porto);
+let porta = 8000;
+app.listen(porta, () => {
+ console.log('Servidor em execucao na porta: ' + porta);
 });
